@@ -5,6 +5,7 @@
 @section('stylesheets')
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/parsley.css')}}">
 
+
 @section('content')
 
     <div class="row">
@@ -15,7 +16,11 @@
             <div class="box-body">
                 <div class="form-group">
                     {{Form::label('title', 'Title')}}
-                    {{Form::text('title',null,array('class' => 'form-control', 'placeholder'=>'Title','required' => '', 'maxlength' => '255'))}}
+                    {{Form::text('title',null,array('class' => 'form-control input-lg', 'placeholder'=>'Title','required' => '', 'maxlength' => '255'))}}
+                </div>
+                <div class="form-group">
+                    {{Form::label('slug', 'Slug')}}
+                    {{Form::text('slug',null,array('class' => 'form-control', 'placeholder'=>'Url' ,'required' => ''))}}
                 </div>
                 <div class="form-group">
                     {{Form::label('body', 'Content')}}
@@ -28,11 +33,7 @@
             </div>
         </div>
     </div>
-
-
-
-@endsection
-
+@stop
 
 @section('scripts')
     <script src="{{URL::asset('js/parsley.min.js')}}"></script>

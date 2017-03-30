@@ -34,19 +34,18 @@
         <ul class='wraplist'>
 
 
-            <li class="">
+            <li class="{{ Request::is('/')? "open" : "" }}">
                 <a href="/">
                     <i class="fa fa-dashboard"></i>
                     <span class="title">Home</span>
                 </a>
             </li>
-            <li class="">
-                <a href="index.html">
+            <li class="{{ Request::is('blog')? "open" : "" }}">
+                <a href="/blog">
                     <i class="fa fa-dashboard"></i>
-                    <span class="title">Home</span>
+                    <span class="title">Blog</span>
                 </a>
             </li>
-
 
         </ul>
 

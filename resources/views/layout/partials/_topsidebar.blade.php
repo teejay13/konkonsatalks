@@ -17,13 +17,13 @@
                 <li class="profile">
                     <a href="#" data-toggle="dropdown" class="toggle">
                         <img src="data/profile/profile.png" alt="user-image" class="img-circle img-inline">
-                        <span>Jason Bourne <i class="fa fa-angle-down"></i></span>
+                        <span>Salako Adetunji<i class="fa fa-angle-down"></i></span>
                     </a>
                     <ul class="dropdown-menu profile animated fadeIn">
                         <li>
-                            <a href="#settings">
+                            <a href="{{ route('posts.index') }}">
                                 <i class="fa fa-wrench"></i>
-                                Settings
+                                Posts
                             </a>
                         </li>
                         <li>

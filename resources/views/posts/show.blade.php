@@ -13,6 +13,10 @@
         <div class="col-md-4">
             <div class="well">
                 <dl class="dl-horizontal">
+                    <dt>Url:</dt>
+                    <dd><a href="{{ url('blog/'.$post->slug) }}" >{{ url($post->slug) }}</a></dd>
+                </dl>
+                <dl class="dl-horizontal">
                     <dt>Create At:</dt>
                     <dd>{{date('m j, y h:ia', strtotime($post->created_at))}}</dd>
                 </dl>
@@ -22,11 +26,22 @@
                 </dl>
             </div>
             <div class="row">
-                <div class="col-sm-6">
-                    {!! Html::linkRoute('posts.edit', 'Edit', array($post->id), array('class' =>'btn btn-primary btn-block' )) !!}
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        {!! Html::linkRoute('posts.edit', 'Edit', array($post->id), array('class' =>'btn btn-primary btn-block')) !!}
+                    </div>
+                    <div class="col-sm-6">
+                        {!! Form::open(['route' => ['posts.destroy', $post->id],'method'=> 'DELETE']) !!}
+
+                        {!! Form::submit('Delete', ['class' =>'btn btn-danger btn-block'])!!}
+
+                        {!! Form::close()!!}
+                    </div>
                 </div>
-                <div class="col-sm-6">
-                    {!! Html::linkRoute('posts.destroy', 'Delete', array($post->id), array('class' =>'btn btn-danger btn-block' )) !!}
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {!! Html::linkRoute('posts.index', '<< See All Posts', [], array('class' =>'btn btn-primary btn-block btn-h1-spacing')) !!}
                 </div>
             </div>
         </div>

@@ -16,6 +16,8 @@
         <section class="wrapper" style='margin-top:60px;display:inline-block;width:100%;padding:15px 0 0 15px;'>
 
             @include('layout.partials._messages')
+
+            {{Auth::check()? "Logged In" : "Logged out"}}
             @yield('content')
 
             <p class="text-center">Copyright Teejay - All Rights Reserved</p>
