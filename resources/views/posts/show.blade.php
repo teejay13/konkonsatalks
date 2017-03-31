@@ -8,6 +8,14 @@
             <h1>{{ $post->title }}</h1>
 
             <p class="lead">{{ $post->body }}</p>
+
+            <hr>
+            <div class="tags">
+                @foreach($post->tags as $tag)
+                    <span class="label label-orange">{{ $tag->name }}</span>
+                @endforeach
+            </div>
+
         </div>
 
         <div class="col-md-4">
@@ -15,6 +23,10 @@
                 <dl class="dl-horizontal">
                     <dt>Url:</dt>
                     <dd><a href="{{ url('blog/'.$post->slug) }}" >{{ url($post->slug) }}</a></dd>
+                </dl>
+                <dl class="dl-horizontal">
+                    <dt>Category:</dt>
+                    <dd>{{ $post->category->name }}</dd>
                 </dl>
                 <dl class="dl-horizontal">
                     <dt>Create At:</dt>

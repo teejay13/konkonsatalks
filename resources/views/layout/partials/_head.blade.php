@@ -32,6 +32,7 @@
 <!-- CORE CSS FRAMEWORK - END -->
 
     <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - START -->
+
     <!-- OTHER SCRIPTS INCLUDED ON THIS PAGE - END -->
 
 
@@ -39,6 +40,7 @@
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/style.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/responsive.css')}}">
 
+    @yield('stylesheets')
 {{--<link href="assets/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="assets/css/responsive.css" rel="stylesheet" type="text/css"/>--}}
 <!-- CORE CSS TEMPLATE - END -->

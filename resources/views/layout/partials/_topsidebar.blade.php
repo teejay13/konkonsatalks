@@ -14,10 +14,11 @@
         </div>
         <div class='pull-right'>
             <ul class="info-menu right-links list-inline list-unstyled">
+                @if(Auth::check())
                 <li class="profile">
                     <a href="#" data-toggle="dropdown" class="toggle">
                         <img src="data/profile/profile.png" alt="user-image" class="img-circle img-inline">
-                        <span>Salako Adetunji<i class="fa fa-angle-down"></i></span>
+                        <span> {{ Auth::user()->name }} <i class="fa fa-angle-down"></i></span>
                     </a>
                     <ul class="dropdown-menu profile animated fadeIn">
                         <li>
@@ -39,13 +40,23 @@
                             </a>
                         </li>
                         <li class="last">
-                            <a href="ui-login.html">
+                            <a href="{{ route('logout') }}"
+                               onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">
                                 <i class="fa fa-lock"></i>
                                 Logout
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
                             </a>
                         </li>
                     </ul>
                 </li>
+
+                @else
+                    <a href="{{ route('login') }}" class="btn btn-default">Login</a>
+
+                @endif
             </ul>
         </div>
     </div>

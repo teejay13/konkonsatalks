@@ -46,6 +46,18 @@
                     <span class="title">Blog</span>
                 </a>
             </li>
+            <li class="{{ Request::is('blog')? "open" : "" }}">
+                <a href="{{route('categories.index')}}">
+                    <i class="fa fa-dashboard"></i>
+                    <span class="title">Categories</span>
+                </a>
+            </li>
+            <li class="{{ Request::is('blog')? "open" : "" }}">
+                <a href="{{route('tags.index')}}">
+                    <i class="fa fa-dashboard"></i>
+                    <span class="title">Tags</span>
+                </a>
+            </li>
 
         </ul>
 

@@ -8,13 +8,15 @@
 
     @endif
 
-@if(count($errors) > 0 )
+@if (count($errors) > 0)
+
     <div class="alert alert-danger" role="alert">
         <strong>Errors:</strong>
-        @foreach($errors as $error)
-            <li>{{$error}}</li>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
             @endforeach
+        </ul>
     </div>
 
-
-    @endif
+@endif

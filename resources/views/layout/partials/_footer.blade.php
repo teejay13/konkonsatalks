@@ -27,3 +27,4 @@
 <!-- Sidebar Graph - START -->
 <script src="{{URL::asset('plugins/sparkline-chart/jquery.sparkline.min.js')}}"></script>
 <script src="{{URL::asset('js/chart-sparkline.js')}}"></script>
+@yield('scripts')

@@ -21,12 +21,23 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/', 'PageController@getIndex');
     Route::resource('posts','PostController');
     //Authentication
-    Route::get('auth/login', 'Auth\LoginController@showLoginForm');
+    Route::get('auth/login', ['as'=>'login', 'uses'=>'Auth\LoginController@showLoginForm']);
     Route::post('auth/login', 'Auth\LoginController@postLogin');
-    Route::get('auth/logout', 'Auth\LoginController@logout');
+    Route::get('auth/logout', ['as'=>'logout','uses'=>'Auth\LoginController@getLogout']);
 
     Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm');
     Route::post('auth/register', 'Auth\RegisterController@postRegister');
 
+    //password Resets
+    //Route::get('password/reset/{token?}', 'Auth\ForgotPasswordController@showRestForm');
+    Route::post('password/email','Auth\passwordController@senResetLinkEmail');
+    Route::post('password/reset','Auth\passwordcontroller@reset');
+
+    //categories
+    Route::resource('categories','CategoryController', ['except' => ['create']]);
+    Route::resource('tags','TagController', ['except' => ['create']]);
+
 });
 Auth::routes();
+
+//Route::get('/home', 'HomeController@index');
