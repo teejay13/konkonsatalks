@@ -26,7 +26,7 @@
                 <div class="content-body">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                            <p>{{ substr($post->body,0, 300)}}{{strlen($post->body) > 300?: "..." }}</p>
+                            <p>{{ substr(strip_tags($post->body),0, 300)}}{{strlen(strip_tags($post->body)) > 300?  "...":"" }}</p>
                             <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-purple" >Read More</a>
                         </div>
                     </div>
